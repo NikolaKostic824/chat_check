@@ -16,6 +16,7 @@ Message Sanitization Function: Function that removes special characters, numbers
 Chat Check Function: Function that checks a player's message for inappropriate words and applies penalties if necessary.
 
 How to Use?
+
 Clone the Repository: Clone this repository to your computer.
 
 Run the Code: Execute the main JavaScript code.
