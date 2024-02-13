@@ -1,9 +1,20 @@
+/**
+ * Imports the penalty function from the penaltyModule.js file.
+ * @module penalty
+ */
 import { penalty } from "./penaltyModule.js";
 
-// Initialize array to store inappropriate words
+/**
+ * Array to store inappropriate words.
+ * @type {string[]}
+ */
 let inappropriateWords = [];
 
-// Function to sanitize the message and extract words
+/**
+ * Function to sanitize the message and extract words.
+ * @param {string} message - The message to sanitize.
+ * @returns {string[]} An array of sanitized words.
+ */
 const sanitizeMessage = (message) => {
   // Remove special characters and split the string into words
   const finalWords = message
@@ -14,7 +25,10 @@ const sanitizeMessage = (message) => {
   return finalWords;
 };
 
-// Function to set inappropriate words
+/**
+ * Sets inappropriate words.
+ * @param {string[]} newWords - An array of new inappropriate words.
+ */
 export const setInappropriateWords = (newWords) => {
   if (Array.isArray(newWords)) {
     // Clear the array and add new words (converted to lowercase)
@@ -25,7 +39,16 @@ export const setInappropriateWords = (newWords) => {
   }
 };
 
-// Function to check the chat message for inappropriate words
+/**
+ * Checks the chat message for inappropriate words and applies penalties if found.
+ * @param {string} message - The chat message to check.
+ * @param {Object[]} players - Array of players.
+ * @param {Object} player - The player who sent the message.
+ * @param {Object} penaltyTypeRules - Penalty type rules.
+ * @param {number} penaltyTypeRules.level - The level penalty to apply.
+ * @param {number} penaltyTypeRules.gold - The gold penalty to apply.
+ * @param {number} penaltyTypeRules.maxPenalty - The maximum penalty threshold.
+ */
 export const checkChat = (message, players, player, penaltyTypeRules) => {
   const finalMessage = sanitizeMessage(message); // Sanitize the message
   finalMessage.forEach((word) => {

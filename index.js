@@ -1,10 +1,16 @@
-// Import necessary functions from messagesModule.js
+/**
+ * Imports necessary functions from messagesModule.js.
+ * @module messages
+ */
 import {
   checkChat,
   setInappropriateWords,
 } from "./custom_modules/messagesModule.js";
 
-// Define an array of player objects
+/**
+ * Array of player objects.
+ * @type {Object[]}
+ */
 const players = [
   {
     username: "Mark",
@@ -26,14 +32,23 @@ const players = [
   },
 ];
 
-// Define penalty rules for chat
+/**
+ * Penalty rules for chat.
+ * @type {Object}
+ * @property {number} gold - The gold penalty to apply.
+ * @property {number} level - The level penalty to apply.
+ * @property {number} maxPenalty - The maximum penalty threshold.
+ */
 const chatPenalty = {
   gold: 200,
   level: 5,
   maxPenalty: 3,
 };
 
-// Set inappropriate words
+/**
+ * Set inappropriate words.
+ * @param {string[]} newWords - An array of new inappropriate words.
+ */
 setInappropriateWords(["inappropriate", "offensive", "forbidden"]);
 
 // Check the chat message for inappropriate words
